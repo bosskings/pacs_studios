@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PACS Studio. | Design • Build • Inspire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#111b2b',
+                            900: '#0b1320',
+                        },
+                        accent: {
+                            yellow: '#f59e0b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
+
+    
+    <header class="fixed w-full bg-slate-100/90 dark:bg-navy-900/95 backdrop-blur-md text-slate-900 dark:text-white z-40 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-2">
+                <span class="text-3xl font-extrabold tracking-tight flex items-center h-full">
+                    <img src="img/pac2.jpeg" alt="PACS Studio Logo" class="h-12 sm:h-16 w-auto object-contain bg-slate-50 dark:bg-slate-900">
+                </span>
+            </a>
+
+            
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm tracking-wide">
+                <a href="#home" class="hover:text-accent-yellow transition-colors">HOME</a>
+                <a href="#about" class="hover:text-accent-yellow transition-colors">ABOUT</a>
+                <a href="#services" class="hover:text-accent-yellow transition-colors">SERVICES</a>
+                <a href="#projects" class="hover:text-accent-yellow transition-colors">PROJECTS</a>
+                <a href="#contact" class="hover:text-accent-yellow transition-colors">CONTACT</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <button onclick="toggleTheme()" class="p-2 text-slate-600 dark:text-slate-300 hover:text-accent-yellow transition-colors text-lg" aria-label="Toggle Theme">
+                    <i id="theme-toggle-icon" class="fa-solid fa-moon dark:fa-sun"></i>
+                </button>
+                <a href="#contact">
+                    <button class="bg-accent-yellow hover:bg-amber-600 text-slate-950 font-bold px-5 py-2.5 rounded-none transition-all shadow-md">
+                        BOOK CONSULTATION
+                    </button>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-3 md:hidden">
+                <button onclick="toggleTheme()" class="p-2 text-slate-600 dark:text-slate-300 hover:text-accent-yellow text-xl" aria-label="Toggle Theme">
+                    <i id="theme-toggle-icon-mobile" class="fa-solid fa-moon dark:fa-sun"></i>
+                </button>
+                <button id="menu-btn" class="p-2 text-2xl focus:outline-none text-slate-900 dark:text-slate-100" aria-label="Toggle Navigation Menu">
+                    <i id="menu-icon" class="fa-solid fa-bars transition-transform duration-300"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="menu-overlay" class="fixed inset-0 bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 z-[98]"></div>
+
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-[85%] max-w-sm bg-slate-100 dark:bg-slate-950 z-[99] border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between py-8 px-6 text-slate-800 dark:text-slate-300 transition-transform duration-300 ease-in-out -translate-x-full overflow-y-auto">
+        <div>
+            <div class="flex justify-end mb-2">
+                <button id="close-menu-btn" class="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="text-center mb-6">
+                <div class="w-20 h-20 rounded-full border-2 border-accent-yellow/40 p-0.5 mx-auto mb-3 shadow-lg">
+                    <img src="img/logo (2).png" alt="Phoebe Chibuike" class="w-full h-full object-cover rounded-full">
+                </div>
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white tracking-wide">PACS-STUDIO</h2>
+            </div>
+
+            <div class="flex justify-center gap-2.5 mb-8">
+                 <a href="https://wa.me/+2349071915799" target="_blank" rel="noopener noreferrer" class="w-9 h-9 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-accent-yellow hover:text-slate-950">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                </a>
+                <a href="https://web.facebook.com/profile.php?id=61589940606644" target="_blank" rel="noopener noreferrer" class="w-9 h-9 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-accent-yellow hover:text-slate-950" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/iam_phoebe1/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-accent-yellow hover:text-slate-950" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/phoebe-chibuike-1bbb8440b/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-400 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-accent-yellow hover:text-slate-950" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+            </div>
+
+            <nav class="flex flex-col space-y-2 w-full">
+                <a href="#home" class="mobile-link py-3 px-4 text-center text-lg font-medium tracking-wide text-slate-800 dark:text-slate-200 hover:text-accent-yellow hover:bg-slate-200 dark:hover:bg-slate-900 rounded-lg transition-colors duration-200">Home</a>
+                <a href="#about" class="mobile-link py-3 px-4 text-center text-lg font-medium tracking-wide text-slate-800 dark:text-slate-200 hover:text-accent-yellow hover:bg-slate-200 dark:hover:bg-slate-900 rounded-lg transition-colors duration-200">About</a>
+                <a href="#services" class="mobile-link py-3 px-4 text-center text-lg font-medium tracking-wide text-slate-800 dark:text-slate-200 hover:text-accent-yellow hover:bg-slate-200 dark:hover:bg-slate-900 rounded-lg transition-colors duration-200">Services</a>
+                <a href="#projects" class="mobile-link py-3 px-4 text-center text-lg font-medium tracking-wide text-slate-800 dark:text-slate-200 hover:text-accent-yellow hover:bg-slate-200 dark:hover:bg-slate-900 rounded-lg transition-colors duration-200">Projects</a>
+                <a href="#contact" class="mobile-link py-3 px-4 text-center text-lg font-medium tracking-wide text-slate-800 dark:text-slate-200 hover:text-accent-yellow hover:bg-slate-200 dark:hover:bg-slate-900 rounded-lg transition-colors duration-200">Contact</a>
+            </nav>
+        </div>
+
+        <div class="mt-8 pt-4 border-t border-slate-200 dark:border-slate-800">
+            <a href="#contact" class="mobile-link">
+                <button class="w-full bg-accent-yellow hover:bg-amber-600 text-slate-950 font-bold py-3 px-4 transition-all shadow-md text-sm tracking-wider">
+                    BOOK CONSULTATION
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100 flex items-center justify-center">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80" class="absolute inset-0 w-full h-full object-cover filter brightness-50" alt="Architecture Design">
+            <div class="relative z-10 text-center max-w-4xl px-4">
+                <p class="text-brand-accent text-white uppercase tracking-widest font-semibold mb-3">Architecture & Design</p>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 uppercase tracking-wide">Refined Architectural Spaces</h1>
+                <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">Creating functional, aesthetically refined residential and commercial architecture tailored to modern living.</p>
+                <a href="#projects" class="bg-brand-accent text-white px-8 py-3 uppercase tracking-wider font-semibold text-sm hover:bg-opacity-90 transition-all">View Portfolio</a>
+            </div>
+        </div>
+
+        <div class="slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 flex items-center justify-center">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=80" class="absolute inset-0 w-full h-full object-cover filter brightness-50" alt="Interior Design">
+            <div class="relative z-10 text-center max-w-4xl px-4">
+                <p class="text-brand-accent text-white uppercase tracking-widest font-semibold mb-3">Interior Design</p>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 uppercase tracking-wide">Contemporary Interiors</h1>
+                <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">Transforming spaces into immersive, functional environments with premium finishes and thoughtful details.</p>
+                <a href="#booking" class="bg-brand-accent text-white px-8 py-3 uppercase tracking-wider font-semibold text-sm hover:bg-opacity-90 transition-all">Book Studio Session</a>
+            </div>
+        </div>
+
+        <div class="slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 flex items-center justify-center">
+            <img src="img/pac3.jpg" class="absolute inset-0 w-full h-full object-cover filter brightness-50" alt="Construction Execution">
+            <div class="relative z-10 text-center max-w-4xl px-4">
+                <p class="text-brand-accent text-white uppercase tracking-widest font-semibold mb-3">Construction & Management</p>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 uppercase tracking-wide">Precision Execution</h1>
+                <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">Seamless execution from 3D visualization and site construction to full project delivery.</p>
+                <a href="#services" class="bg-brand-accent text-white px-8 py-3 uppercase tracking-wider font-semibold text-sm hover:bg-opacity-90 transition-all">Explore Services</a>
+            </div>
+        </div>
+
+        <button id="prevSlide" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button id="nextSlide" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+    </section>
+
+    <section class="bg-navy-800 text-white border-y border-slate-800 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4">
+                    <span class="text-accent-yellow font-bold text-2xl block mb-1">01</span>
+                    <h3 class="font-bold tracking-wider text-sm uppercase">DESIGN</h3>
+                </div>
+                <div class="p-4">
+                    <span class="text-accent-yellow font-bold text-2xl block mb-1">02</span>
+                    <h3 class="font-bold tracking-wider text-sm uppercase">VISUALIZE</h3>
+                </div>
+                <div class="p-4">
+                    <span class="text-accent-yellow font-bold text-2xl block mb-1">03</span>
+                    <h3 class="font-bold tracking-wider text-sm uppercase">BUILD</h3>
+                </div>
+                <div class="p-4">
+                    <span class="text-accent-yellow font-bold text-2xl block mb-1">04</span>
+                    <h3 class="font-bold tracking-wider text-sm uppercase">DELIVER</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80" alt="PACS Studio Architecture" class="w-full h-[450px] object-cover shadow-2xl">
+                    <div class="absolute -bottom-6 -right-6 bg-accent-yellow text-slate-950 p-6 hidden lg:block font-bold">
+                        <p class="text-3xl">100%</p>
+                        <p class="text-xs uppercase tracking-wider">Executed Precision</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">About PACS Studio.</h2>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        PACS Studio is a full-service design, construction, and visualization studio. We combine architecture, interior design, advanced 3D rendering, and hands-on project execution under one roof.
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Our integrated approach ensures seamless continuity between early conceptual designs, photorealistic client visualizations, and the final physical build.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white">Residential</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Bespoke home architectures and custom interior spaces.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white">Commercial</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Refined office spaces and retail environments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-slate-100 dark:bg-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl">Our Capabilities</h2>
+                <div class="w-12 h-1 bg-accent-yellow mx-auto my-4"></div>
+                <p class="text-slate-600 dark:text-slate-300">Comprehensive services delivering exceptional design and construction solutions.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-slate-800 p-8 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+                    <div class="text-3xl text-slate-900 dark:text-accent-yellow mb-4"><i class="fa-solid fa-compass-drafting"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Architecture & Design</h3>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Complete building design, space planning, residential masterplans, and commercial architecture tailored to project requirements.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-8 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+                    <div class="text-3xl text-slate-900 dark:text-accent-yellow mb-4"><i class="fa-solid fa-couch"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Interior Design</h3>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Contemporary residential interiors, ergonomic office design, and commercial space planning focused on form and function.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-8 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+                    <div class="text-3xl text-slate-900 dark:text-accent-yellow mb-4"><i class="fa-solid fa-cubes"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">3D Visualization</h3>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">High-resolution architectural renders, immersive 3D modeling, and video walkthroughs before groundbreaking.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-8 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+                    <div class="text-3xl text-slate-900 dark:text-accent-yellow mb-4"><i class="fa-solid fa-helmet-safety"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Construction & Finishing</h3>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Full building construction, high-end renovations, meticulous finishing, and structural execution.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-8 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+                    <div class="text-3xl text-slate-900 dark:text-accent-yellow mb-4"><i class="fa-solid fa-list-check"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Project Management</h3>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">On-site supervision, timeline coordination, strict quality control, and turn-key delivery.</p>
+                </div>
+                <div class="bg-navy-900 p-8 text-white flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Need a Custom Consultation?</h3>
+                        <p class="text-slate-400 text-sm">Schedule a face-to-face appointment with our lead architects and designers.</p>
+                    </div>
+                    <a href="#contact">
+                        <button class="mt-6 bg-accent-yellow text-slate-950 font-bold py-3 text-center w-full hover:bg-amber-500 transition-colors">
+                            BOOK SESSION
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl">Featured Projects</h2>
+                    <div class="w-12 h-1 bg-accent-yellow my-4"></div>
+                    <p class="text-slate-600 dark:text-slate-300">Selected portfolio of recent design, visualization, and builds.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="home.html">
+                    <div class="group relative overflow-hidden bg-slate-900">
+                        <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+                            <img src="img/logo (2).png" alt="PACS Studio Logo" class="w-full h-full object-contain">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80" alt="Modern Villa" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                        <div class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+                            <span class="text-xs font-semibold text-accent-yellow uppercase tracking-widest">Architecture & Build</span>
+                            <h3 class="text-xl font-bold mt-1">The House Residence</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="home.html">
+                    <div class="group relative overflow-hidden bg-slate-900">
+                        <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+                            <img src="img/logo (2).png" alt="PACS Studio Logo" class="w-full h-full object-contain">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80" alt="Minimalist Interior" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                        <div class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+                            <span class="text-xs font-semibold text-accent-yellow uppercase tracking-widest">Interior Design</span>
+                            <h3 class="text-xl font-bold mt-1">Monochrome Living Space</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="home.html">
+                    <div class="group relative overflow-hidden bg-slate-900">
+                        <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+                            <img src="img/logo (2).png" alt="PACS Studio Logo" class="w-full h-full object-contain">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80" alt="3D Render" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                        <div class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+                            <span class="text-xs font-semibold text-accent-yellow uppercase tracking-widest">3D Visualization</span>
+                            <h3 class="text-xl font-bold mt-1">Urban Commercial Complex</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold sm:text-4xl mb-4">Start Your Project</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        Have a building or design project in mind? Contact our team today or book a direct studio session.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-accent-yellow text-xl mt-1"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4 class="font-bold">Studio Location</h4>
+                                <p class="text-slate-400 text-sm"></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="text-accent-yellow text-xl mt-1"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h4 class="font-bold">Email Us</h4>
+                                <p class="text-slate-400 text-sm">pacsglobal.ng@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="text-accent-yellow text-xl mt-1"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <h4 class="font-bold">Call Us</h4>
+                                <p class="text-slate-400 text-sm">+2349071915799</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <a href="https://wa.me/+2349071915799" target="_blank" class="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-black p-8 border border-slate-800">
+                    <h3 class="text-xl font-bold mb-6">General Inquiry</h3>
+                    <form onsubmit="event.preventDefault(); alert('Message sent successfully!');" class="space-y-4">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-400 mb-1">Your Name</label>
+                            <input type="text" required class="w-full bg-black border border-slate-700 px-4 py-3 text-white focus:outline-none focus:border-accent-yellow">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-400 mb-1">Email Address</label>
+                            <input type="email" required class="w-full bg-black border border-slate-700 px-4 py-3 text-white focus:outline-none focus:border-accent-yellow">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-400 mb-1">Message</label>
+                            <textarea rows="4" required class="w-full bg-black border border-slate-700 px-4 py-3 text-white focus:outline-none focus:border-accent-yellow"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-accent-yellow text-slate-950 font-bold py-3 hover:bg-amber-500 transition-colors">
+                            SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="booking-modal" class="fixed inset-0 bg-black/75 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-800 text-slate-900 dark:text-white max-w-lg w-full p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="toggleModal()" class="absolute top-4 right-4 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h3 class="text-2xl font-bold mb-1">Book Studio Appointment</h3>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Schedule a session or project meeting with PACS Studio.</p>
+
+            <form onsubmit="handleBooking(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Full Name</label>
+                    <input type="text" required class="w-full border border-slate-300 dark:border-slate-600 bg-transparent px-4 py-2.5 focus:outline-none focus:border-slate-900 dark:focus:border-accent-yellow">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Email Address</label>
+                    <input type="email" required class="w-full border border-slate-300 dark:border-slate-600 bg-transparent px-4 py-2.5 focus:outline-none focus:border-slate-900 dark:focus:border-accent-yellow">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Phone Number</label>
+                    <input type="tel" required class="w-full border border-slate-300 dark:border-slate-600 bg-transparent px-4 py-2.5 focus:outline-none focus:border-slate-900 dark:focus:border-accent-yellow">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Service Required</label>
+                    <select required class="w-full border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 px-4 py-2.5 focus:outline-none focus:border-slate-900 dark:focus:border-accent-yellow">
+                        <option value="">Select a service</option>
+                        <option value="architecture">Architecture & Building Design</option>
+                        <option value="interior">Interior Design</option>
+                        <option value="visualization">3D Visualization & Walkthrough</option>
+                        <option value="construction">Construction & Execution</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Preferred Date</label>
+                        <input type="date" required class="w-full border border-slate-300 dark:border-slate-600 bg-transparent px-4 py-2.5 focus:outline-none focus:border-slate-900 dark:focus:border-accent-yellow">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Preferred Time</label>
+                        <input type="time" required class="w-full border border-slate-300 dark:border-slate-600 bg-transparent px-4 py-2.5 focus:outline-none focus:border-slate-900 dark:focus:border-accent-yellow">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">Project Brief / Details</label>
+                    <textarea rows="3" class="w-full border border-slate-300 dark:border-slate-600 bg-transparent px-4 py-2.5 focus:outline-none focus:border-slate-900 dark:focus:border-accent-yellow" placeholder="Tell us briefly about your site, budget, or vision..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-slate-900 dark:bg-accent-yellow dark:text-slate-950 text-white font-bold py-3 hover:bg-slate-800 dark:hover:bg-amber-500 transition-colors mt-4">
+                    CONFIRM APPOINTMENT BOOKING
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bg-black text-slate-400 py-8 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <p>&copy; 2026 PACS Studio. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram text-lg"></i></a>
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+   <script>
+
+      const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+                slide.style.zIndex = i === index ? '10' : '0';
+            });
+        }
+
+        document.getElementById('nextSlide').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('prevSlide').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000);
+
+      const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('menu-overlay');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const menuIcon = document.getElementById('menu-icon');
+
+        function toggleMenu() {
+            const isOpen = !mobileMenu.classList.contains('-translate-x-full');
+            
+            if (isOpen) {
+                mobileMenu.classList.add('-translate-x-full');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                overlay.classList.remove('opacity-100', 'pointer-events-auto');
+                menuIcon.classList.replace('fa-xmark', 'fa-bars');
+            } else {
+                mobileMenu.classList.remove('-translate-x-full');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                overlay.classList.add('opacity-100', 'pointer-events-auto');
+                menuIcon.classList.replace('fa-bars', 'fa-xmark');
+            }
+        }
+
+        if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+        if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
+        if (overlay) overlay.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+
+            const desktopIcon = document.getElementById('theme-toggle-icon');
+            const mobileIcon = document.getElementById('theme-toggle-icon-mobile');
+
+            if (desktopIcon) desktopIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            if (mobileIcon) mobileIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        }
+
+    function toggleModal() {
+        const modal = document.getElementById('booking-modal');
+        modal.classList.toggle('hidden');
+    }
+
+    function handleBooking(event) {
+        event.preventDefault();
+        alert('Thank you for booking with PACS Studio! We have received your request and will confirm your appointment shortly.');
+        toggleModal();
+    }
+</script>
+</body>
+</html>
