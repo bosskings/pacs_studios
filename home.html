@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PACS Studio. | Design • Build • Inspire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#111b2b',
+                            900: '#0b1320',
+                        },
+                        accent: {
+                            yellow: '#f59e0b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+   <!-- Gallery Section -->
+<section id="gallery" class="py-10 bg-slate-900 text-white min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            
+            <!-- Medium Rounded Logo Tag -->
+            <div class="inline-flex items-center justify-center p-2 mb-3 rounded-xl ">
+                <!-- Replace this SVG with your logo image (<img src="..." class="w-8 h-8 rounded-md" />) if needed -->
+               <img src="img/logo (2).png" class="w-28 h-28 rounded-md">
+            </div>
+
+            <p class="text-amber-500 font-semibold tracking-widest uppercase text-sm mb-2">Portfolio</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight uppercase">Featured Works</h1>
+            <div class="w-16 h-1 bg-amber-500 mx-auto mt-4"></div>
+        </div>
+        <!-- Category Filters -->
+        <div class="flex flex-wrap justify-center gap-2 mb-12" id="gallery-filters">
+            <button class="filter-btn active-filter px-5 py-2 text-sm font-semibold uppercase tracking-wider bg-amber-500 text-slate-950 transition-all" data-filter="all">All Projects</button>
+            <button class="filter-btn px-5 py-2 text-sm font-semibold uppercase tracking-wider bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="architecture">Architecture</button>
+            <button class="filter-btn px-5 py-2 text-sm font-semibold uppercase tracking-wider bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="interior">Interior Design</button>
+            <button class="filter-btn px-5 py-2 text-sm font-semibold uppercase tracking-wider bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="visualization">3D Visualization</button>
+            <button class="filter-btn px-5 py-2 text-sm font-semibold uppercase tracking-wider bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="construction">Construction</button>
+        </div>
+
+        <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+    <!-- Item 1: Architecture -->
+<div 
+    class="gallery-item architecture group relative overflow-hidden bg-slate-800 cursor-pointer"
+    onclick="openImageModal('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=90')"
+>
+
+    <!-- PACS Studio Logo Tag -->
+    <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+        <img 
+            src="img/logo (2).png" 
+            alt="PACS Studio Logo" 
+            class="w-full h-full object-contain"
+        >
+    </div>
+
+    <!-- Project Image -->
+    <img 
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=90"
+        alt="Minimalist Villa"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+    >
+
+    <!-- Hover Information -->
+    <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+        <span class="text-amber-500 text-xs font-bold uppercase tracking-wider">
+            Architecture
+        </span>
+
+        <h3 class="text-xl font-bold text-white">
+            Minimalist Villa
+        </h3>
+    </div>
+
+</div>
+
+
+<!-- Item 2: Interior -->
+<div 
+    class="gallery-item interior group relative overflow-hidden bg-slate-800 cursor-pointer"
+    onclick="openImageModal('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=90')"
+>
+
+    <!-- PACS Studio Logo Tag -->
+    <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+        <img 
+            src="img/logo (2).png"
+            alt="PACS Studio Logo"
+            class="w-full h-full object-contain"
+        >
+    </div>
+
+    <!-- Project Image -->
+    <img 
+        src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=90"
+        alt="Modern Penthouse Interior"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+    >
+
+    <!-- Hover Information -->
+    <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+        <span class="text-amber-500 text-xs font-bold uppercase tracking-wider">
+            Interior Design
+        </span>
+
+        <h3 class="text-xl font-bold text-white">
+            Modern Penthouse Living
+        </h3>
+    </div>
+
+</div>
+
+
+<!-- Item 3: 3D Visualization -->
+<div 
+    class="gallery-item visualization group relative overflow-hidden bg-slate-800 cursor-pointer"
+    onclick="openImageModal('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=90')"
+>
+
+    <!-- PACS Studio Logo Tag -->
+    <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+        <img 
+            src="img/logo (2).png"
+            alt="PACS Studio Logo"
+            class="w-full h-full object-contain"
+        >
+    </div>
+
+    <!-- Project Image -->
+    <img 
+        src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=90"
+        alt="Commercial Render"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+    >
+
+    <!-- Hover Information -->
+    <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+        <span class="text-amber-500 text-xs font-bold uppercase tracking-wider">
+            3D Visualization
+        </span>
+
+        <h3 class="text-xl font-bold text-white">
+            Commercial Complex Render
+        </h3>
+    </div>
+
+</div>
+
+
+<!-- Item 4: Construction -->
+<div 
+    class="gallery-item construction group relative overflow-hidden bg-slate-800 cursor-pointer"
+    onclick="openImageModal('img/pac3.jpg')"
+>
+
+    <!-- PACS Studio Logo Tag -->
+    <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+        <img 
+            src="img/logo (2).png"
+            alt="PACS Studio Logo"
+            class="w-full h-full object-contain"
+        >
+    </div>
+
+    <!-- Project Image -->
+    <img 
+        src="img/pac3.jpg"
+        alt="Structural Build"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+    >
+
+    <!-- Hover Information -->
+    <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+        <span class="text-amber-500 text-xs font-bold uppercase tracking-wider">
+            Construction
+        </span>
+
+        <h3 class="text-xl font-bold text-white">
+            Urban Frame Build
+        </h3>
+    </div>
+
+</div>
+
+
+<!-- Item 5: Architecture -->
+<div 
+    class="gallery-item architecture group relative overflow-hidden bg-slate-800 cursor-pointer"
+    onclick="openImageModal('img/pac8.jpeg')"
+>
+
+    <!-- PACS Studio Logo Tag -->
+    <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+        <img 
+            src="img/logo (2).png"
+            alt="PACS Studio Logo"
+            class="w-full h-full object-contain"
+        >
+    </div>
+
+    <!-- Project Image -->
+    <img 
+        src="img/pac8.jpeg"
+        alt="Contemporary House"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+    >
+
+    <!-- Hover Information -->
+    <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+        <span class="text-amber-500 text-xs font-bold uppercase tracking-wider">
+            Architecture
+        </span>
+
+        <h3 class="text-xl font-bold text-white">
+            Contemporary House
+        </h3>
+    </div>
+
+</div>
+
+<div 
+    class="gallery-item visualization group relative overflow-hidden bg-slate-800 cursor-pointer"
+    onclick="openImageModal('img/pac1.jpeg')"
+>
+
+    <!-- PACS Studio Logo Tag -->
+    <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+        <img 
+            src="img/logo (2).png"
+            alt="PACS Studio Logo"
+            class="w-full h-full object-contain"
+        >
+    </div>
+
+    <!-- Project Image -->
+    <img 
+        src="img/pac1.jpeg"
+        alt="Commercial Render"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+    >
+
+    <!-- Hover Information -->
+    <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+        <span class="text-amber-500 text-xs font-bold uppercase tracking-wider">
+            3D Visualization
+        </span>
+
+        <h3 class="text-xl font-bold text-white">
+            Commercial Complex Render
+        </h3>
+    </div>
+
+</div>
+
+
+<!-- Item 4: Construction -->
+<div 
+    class="gallery-item construction group relative overflow-hidden bg-slate-800 cursor-pointer"
+    onclick="openImageModal('img/pac5.jpeg')"
+>
+
+    <!-- PACS Studio Logo Tag -->
+    <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+        <img 
+            src="img/logo (2).png"
+            alt="PACS Studio Logo"
+            class="w-full h-full object-contain"
+        >
+    </div>
+
+    <!-- Project Image -->
+    <img 
+        src="img/pac5.jpeg"
+        alt="Structural Build"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+    >
+
+    <!-- Hover Information -->
+    <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+        <span class="text-amber-500 text-xs font-bold uppercase tracking-wider">
+            Construction
+        </span>
+
+        <h3 class="text-xl font-bold text-white">
+            Urban Frame Build
+        </h3>
+    </div>
+
+</div>
+
+
+<!-- Item 5: Architecture -->
+<div 
+    class="gallery-item architecture group relative overflow-hidden bg-slate-800 cursor-pointer"
+    onclick="openImageModal('img/pac7.jpeg')"
+>
+
+    <!-- PACS Studio Logo Tag -->
+    <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+        <img 
+            src="img/logo (2).png"
+            alt="PACS Studio Logo"
+            class="w-full h-full object-contain"
+        >
+    </div>
+
+    <!-- Project Image -->
+    <img 
+        src="img/pac7.jpeg"
+        alt="Contemporary House"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+    >
+
+    <!-- Hover Information -->
+    <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+        <span class="text-amber-500 text-xs font-bold uppercase tracking-wider">
+            Architecture
+        </span>
+
+        <h3 class="text-xl font-bold text-white">
+            Contemporary House
+        </h3>
+    </div>
+
+</div>
+
+<div 
+    class="gallery-item interior group relative overflow-hidden bg-slate-800 cursor-pointer"
+    onclick="openImageModal('img/pac15.jfif')"
+>
+
+    <!-- PACS Studio Logo Tag -->
+    <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+        <img 
+            src="img/logo (2).png"
+            alt="PACS Studio Logo"
+            class="w-full h-full object-contain"
+        >
+    </div>
+
+    <!-- Project Image -->
+    <img 
+        src="img/pac15.jfif"
+        alt="Modern Penthouse Interior"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+    >
+
+    <!-- Hover Information -->
+    <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+        <span class="text-amber-500 text-xs font-bold uppercase tracking-wider">
+            Interior Design
+        </span>
+
+        <h3 class="text-xl font-bold text-white">
+            Living Room Design
+        </h3>
+    </div>
+
+</div>
+
+
+<!-- Item 3: 3D Visualization -->
+<div 
+    class="gallery-item visualization group relative overflow-hidden bg-slate-800 cursor-pointer"
+    onclick="openImageModal('img/pac11.jpeg')"
+>
+
+    <!-- PACS Studio Logo Tag -->
+    <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+        <img 
+            src="img/logo (2).png"
+            alt="PACS Studio Logo"
+            class="w-full h-full object-contain"
+        >
+    </div>
+
+    <!-- Project Image -->
+    <img 
+        src="img/pac11.jpeg"
+        alt="Commercial Render"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+    >
+
+    <!-- Hover Information -->
+    <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+        <span class="text-amber-500 text-xs font-bold uppercase tracking-wider">
+            3D Visualization
+        </span>
+
+        <h3 class="text-xl font-bold text-white">
+            Commercial Complex Render
+        </h3>
+    </div>
+
+</div>
+
+
+<!-- Item 4: Construction -->
+<div 
+    class="gallery-item construction group relative overflow-hidden bg-slate-800 cursor-pointer"
+    onclick="openImageModal('img/pac4.jpeg')"
+>
+
+    <!-- PACS Studio Logo Tag -->
+    <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+        <img 
+            src="img/logo (2).png"
+            alt="PACS Studio Logo"
+            class="w-full h-full object-contain"
+        >
+    </div>
+
+    <!-- Project Image -->
+    <img 
+        src="img/pac4.jpeg"
+        alt="Structural Build"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+    >
+
+    <!-- Hover Information -->
+    <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+        <span class="text-amber-500 text-xs font-bold uppercase tracking-wider">
+            Construction
+        </span>
+
+        <h3 class="text-xl font-bold text-white">
+            Urban Frame Build
+        </h3>
+    </div>
+
+</div>
+
+
+<!-- Item 5: Architecture -->
+<div 
+    class="gallery-item architecture group relative overflow-hidden bg-slate-800 cursor-pointer"
+    onclick="openImageModal('img/pac16.png')"
+>
+
+    <!-- PACS Studio Logo Tag -->
+    <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+        <img 
+            src="img/logo (2).png"
+            alt="PACS Studio Logo"
+            class="w-full h-full object-contain"
+        >
+    </div>
+
+    <!-- Project Image -->
+    <img 
+        src="img/pac16.png"
+        alt="Contemporary House"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+    >
+
+    <!-- Hover Information -->
+    <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+        <span class="text-amber-500 text-xs font-bold uppercase tracking-wider">
+            Architecture
+        </span>
+
+        <h3 class="text-xl font-bold text-white">
+            Contemporary House
+        </h3>
+    </div>
+
+</div>
+
+
+<!-- Item 6: Interior -->
+<div 
+    class="gallery-item interior group relative overflow-hidden bg-slate-800 cursor-pointer"
+    onclick="openImageModal('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=90')"
+>
+
+    <!-- PACS Studio Logo Tag -->
+    <div class="absolute top-4 left-4 z-20 w-16 h-16 bg-black/90 rounded-lg p-2 shadow-lg border border-white/20 flex items-center justify-center pointer-events-none">
+        <img 
+            src="img/logo (2).png"
+            alt="PACS Studio Logo"
+            class="w-full h-full object-contain"
+        >
+    </div>
+
+    <!-- Project Image -->
+    <img 
+        src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=90"
+        alt="Minimalist Office"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+    >
+
+    <!-- Hover Information -->
+    <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+        <span class="text-amber-500 text-xs font-bold uppercase tracking-wider">
+            Interior Design
+        </span>
+
+        <h3 class="text-xl font-bold text-white">
+            Minimalist Studio Office
+        </h3>
+    </div>
+
+</div>
+
+
+<!-- ========================================= -->
+<!-- LARGE IMAGE MODAL                         -->
+<!-- ========================================= -->
+
+<div 
+    id="imageModal"
+    class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/95 p-4"
+    onclick="closeImageModal()"
+>
+
+    <!-- Close Button -->
+    <button 
+        type="button"
+        onclick="closeImageModal()"
+        class="absolute top-5 right-6 z-[10000] text-white text-5xl font-light leading-none hover:text-amber-500 transition-colors"
+        aria-label="Close image"
+    >
+        &times;
+    </button>
+
+    <!-- Large Project Image -->
+    <img 
+        id="modalImage"
+        src=""
+        alt="Project Image"
+        class="max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain rounded-lg shadow-2xl"
+        onclick="event.stopPropagation()"
+    >
+
+</div>
+</div>
+
+<!-- Lightbox Modal for Full Image View -->
+<div id="lightbox" class="fixed inset-0 bg-slate-950/90 z-50 hidden flex items-center justify-center p-4">
+    <button id="close-lightbox" class="absolute top-6 right-6 text-white text-3xl font-bold hover:text-amber-500 transition-colors">&times;</button>
+    <div class="max-w-4xl max-h-[85vh]">
+        <img id="lightbox-img" src="" alt="Enlarged Project View" class="max-w-full max-h-[80vh] object-contain mx-auto border border-slate-700">
+        <p id="lightbox-caption" class="text-center text-white font-semibold mt-4 text-lg"></p>
+    </div>
+</div>
+
+<!-- JavaScript Logic -->
+<script>
+    // Category Filter Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active button state
+            filterButtons.forEach(btn => {
+                btn.classList.remove('bg-amber-500', 'text-slate-950');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
+            });
+            button.classList.add('bg-amber-500', 'text-slate-950');
+            button.classList.remove('bg-slate-800', 'text-slate-300');
+
+            const filterValue = button.getAttribute('data-filter');
+
+            // Filter items
+            galleryItems.forEach(item => {
+                if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Lightbox Logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const closeLightbox = document.getElementById('close-lightbox');
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // const imgSrc = item.querySelector('img').src;
+            const title = item.querySelector('h3').textContent;
+            
+            lightboxImg.src = imgSrc;
+            lightboxCaption.textContent = title;
+            lightbox.classList.remove('hidden');
+        });
+    });
+
+    closeLightbox.addEventListener('click', () => {
+        lightbox.classList.add('hidden');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.add('hidden');
+        }
+    });
+
+    function openImageModal(imageSrc) {
+
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+
+    // Set the PROJECT IMAGE
+    modalImage.src = imageSrc;
+
+    // Show modal
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+
+    // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
+}
+
+
+function closeImageModal() {
+
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+
+    // Hide modal
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+
+    // Clear image
+    modalImage.src = '';
+
+    // Restore scrolling
+    document.body.style.overflow = '';
+}
+
+
+// Close with ESC key
+document.addEventListener('keydown', function(event) {
+
+    if (event.key === 'Escape') {
+        closeImageModal();
+    }
+
+});
+
+</script>
+</body>
+</html>
